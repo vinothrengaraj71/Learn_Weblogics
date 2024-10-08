@@ -1,0 +1,66 @@
+/* General styles for the form */
+form {
+  background-color: #f9f9f9; /* Light background */
+  border: 1px solid #ddd; /* Light border */
+  border-radius: 8px; /* Rounded corners */
+  padding: 20px; /* Padding inside the form */
+  max-width: 500px; /* Max width for the form */
+  margin: 20px auto; /* Center the form on the page */
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+}
+
+/* Style for labels */
+label {
+  display: block; /* Block display for labels */
+  margin-bottom: 8px; /* Spacing below labels */
+  font-weight: bold; /* Bold text for labels */
+}
+
+/* Input fields styling */
+input[type="text"],
+textarea,
+select {
+  width: 100%; /* Full width */
+  padding: 10px; /* Inner padding */
+  margin-bottom: 15px; /* Spacing below each field */
+  border: 1px solid #ccc; /* Border for inputs */
+  border-radius: 4px; /* Rounded corners for inputs */
+  box-sizing: border-box; /* Include padding and border in total width */
+}
+
+/* Checkbox styling */
+input[type="checkbox"] {
+  margin-right: 5px; /* Spacing next to the checkbox */
+}
+
+/* Submit button styling */
+button {
+  background-color: #007bff; /* Primary button color */
+  color: white; /* White text */
+  padding: 10px 15px; /* Padding for the button */
+  border: none; /* Remove border */
+  border-radius: 4px; /* Rounded corners for the button */
+  cursor: pointer; /* Pointer cursor for buttons */
+  transition: background-color 0.3s; /* Transition effect */
+}
+
+/* Hover effect for the button */
+button:hover {
+  background-color: #0056b3; /* Darker shade on hover */
+}
+
+/* Closing span styling */
+span[title="closing"] {
+  cursor: pointer; /* Pointer cursor */
+  color: #ff0000; /* Red color for closing */
+  font-weight: bold; /* Bold text */
+  float: right; /* Position to the right */
+  margin-top: -20px; /* Pull up */
+}
+
+/* Custom HTML element styling */
+[data-testid="custHtml"] {
+  font-size: 1.2em; /* Larger font for custom HTML element */
+  margin-bottom: 15px; /* Spacing below the element */
+  color: #333; /* Dark text color */
+}
