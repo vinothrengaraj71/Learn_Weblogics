@@ -1,9 +1,22 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import "../styles/Button.css"; // Adjust the path according to your file structure
 
 const Button = ({ label = [] }) => {
   const [isLoggedIn, setIsLoggedIn] = useState(false);
 
+  useEffect(() => {
+    setTimeout(() => {
+      setIsLoggedIn(true);
+    }, 500);
+  }, []);
+
+  //if you want to setTimeout of more than 1000s then you have to initialize timeout in the test case
+
+  useEffect(() => {
+    setTimeout(() => {
+      setIsLoggedIn(false);
+    }, 2000);
+  }, []);
   return (
     <div className="button-container">
       <hr />

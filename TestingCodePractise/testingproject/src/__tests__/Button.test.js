@@ -27,4 +27,18 @@ describe("Button component", () => {
       screen.queryByRole("button", { name: "Start Learning" })
     ).not.toBeInTheDocument();
   });
+
+  it("rendering StartLearning button eventually using a useEffect", async () => {
+    render(<Button />);
+    expect(
+      await screen.findByRole("button", { name: "Start Learning" })
+    ).toBeInTheDocument();
+  });
+
+  it("rendering StartLearning button to Login eventually using useEffect by setting timeout", async () => {
+    render(<Button label={label} />);
+    expect(
+      await screen.findByRole("button", { name: "Login" }, { timeout: 3000 })
+    ).toBeInTheDocument();
+  });
 });
