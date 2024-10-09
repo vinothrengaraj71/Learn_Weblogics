@@ -1,5 +1,5 @@
 import Button from "../components/Button";
-import { render, screen } from "@testing-library/react";
+import { render, screen, logRoles } from "@testing-library/react";
 
 describe("Button component", () => {
   const label = ["html", "css"];
@@ -28,15 +28,18 @@ describe("Button component", () => {
     ).not.toBeInTheDocument();
   });
 
-  it("rendering StartLearning button eventually using a useEffect", async () => {
+  it("rendering StartLearning button eventually using a useEffect including debugging", async () => {
     render(<Button />);
+    screen.debug();
     expect(
       await screen.findByRole("button", { name: "Start Learning" })
     ).toBeInTheDocument();
+    screen.debug();
   });
 
-  it("rendering StartLearning button to Login eventually using useEffect by setting timeout", async () => {
-    render(<Button label={label} />);
+  it("rendering StartLearning button to Login eventually using useEffect by setting timeout and includes logRoles ", async () => {
+    const view = render(<Button label={label} />);
+    logRoles(view.container);
     expect(
       await screen.findByRole("button", { name: "Login" }, { timeout: 3000 })
     ).toBeInTheDocument();
