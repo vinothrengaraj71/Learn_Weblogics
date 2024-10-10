@@ -30,18 +30,21 @@ describe("Button component", () => {
 
   it("rendering StartLearning button eventually using a useEffect including debugging", async () => {
     render(<Button />);
-    screen.debug();
+    // screen.debug();
     expect(
-      await screen.findByRole("button", { name: "Start Learning" })
+      await screen.findByRole("button", { name: /Start Learning/i })
     ).toBeInTheDocument();
-    screen.debug();
+    // screen.debug();
   });
 
   it("rendering StartLearning button to Login eventually using useEffect by setting timeout and includes logRoles ", async () => {
     const view = render(<Button label={label} />);
     logRoles(view.container);
     expect(
-      await screen.findByRole("button", { name: "Login" }, { timeout: 3000 })
+      await screen.findByRole("button", { name: /Start Learning/i })
+    ).toBeInTheDocument();
+    expect(
+      await screen.findByRole("button", { name: /login/i }, { timeout: 3000 })
     ).toBeInTheDocument();
   });
 });

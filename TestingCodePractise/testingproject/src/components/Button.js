@@ -10,13 +10,23 @@ const Button = ({ label = [] }) => {
     }, 500);
   }, []);
 
-  //if you want to setTimeout of more than 1000s then you have to initialize timeout in the test case
+  // //if you want to setTimeout of more than 1000s then you have to initialize timeout in the test case
 
   useEffect(() => {
     setTimeout(() => {
       setIsLoggedIn(false);
     }, 2000);
   }, []);
+  // useEffect(() => {
+  //   const loginTimeout = setTimeout(() => setIsLoggedIn(true), 500);
+  //   const logoutTimeout = setTimeout(() => setIsLoggedIn(false), 2000);
+
+  //   return () => {
+  //     clearTimeout(loginTimeout);
+  //     clearTimeout(logoutTimeout);
+  //   };
+  // }, []);
+
   return (
     <div className="button-container">
       <hr />
